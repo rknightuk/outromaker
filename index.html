@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <title>Connected Outro Maker</title>
+
+    <meta property='og:title' content='Connected Outro Maker' />
+    <meta name='description' content='Make your own Connected outro!' />
+    <meta property='og:description' content='Make your own Connected outro!' />
+    <meta property='og:type' content='article' />
+    <meta property='og:url' content='https://outro.rknight.me' />
+    <meta property='og:url' content='https://outro.rknight.me' />
+    <meta property="og:image" content="https://outro.rknight.me/assets/preview.png">
+
+    <link rel="icon" type="image/png" href="https://outro.rknight.me/icons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="https://outro.rknight.me/icons/favicon.svg" />
+    <link rel="shortcut icon" href="https://outro.rknight.me/icons/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://outro.rknight.me/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="https://outro.rknight.me/icons/site.webmanifest" />
+
+    <style>
+        :root {
+            --text: #f1f3f5;
+            --background: #5c676f;
+        }
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            margin: 0 auto;
+            background: var(--background);
+            font-family: system-ui, sans-serif;
+            font-weight: normal;
+            font-size: 1.2em;
+            background-image: url('assets/background.jpg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text);
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .soundboard {
+            background-color: #343734;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: calc((140px * 3) + 80px);
+            border-radius: 10px;
+            box-shadow: 2px 2px 0px rgba(0,0,0,0.75);
+            font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+        }
+
+        .soundboard h1 {
+            background-color: #c3c3c2;
+            padding: 0;
+            margin: 0;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: black;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+
+        .soundboard a {
+            color: black;
+            background-color: #c3c3c2;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .soundboard a.footer {
+            float: right;
+        }
+
+        .soundboard a.header {
+            clear: both;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+
+        .soundboard a:hover {
+            background-color: white;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            justify-content: center;
+            grid-gap: 20px;
+            font-family: 'Nimbus Mono PS', 'Courier New', monospace;
+            font-size: 0.8em;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 500px) {
+            .soundboard {
+                max-width: calc((140px * 2) + 60px);
+            }
+            
+            .buttons {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            button {
+                height: 120px;
+            }
+        }
+
+        button {
+            aspect-ratio: 1/1;
+            height: 140px;
+            font-weight: bold;
+            border-radius: 3px;
+            border: none;
+            box-shadow: 8px 8px 8px 0px rgba(0,0,0,1);
+            transition: all 0.3s;
+            opacity: 0.9;
+        }
+
+        .button-wrapper:nth-child(1) button {
+            background: rgb(250,220,109);
+            background: radial-gradient(circle, rgba(250,220,109,1) 36%, rgba(222,186,52,1) 100%);
+        }
+        .button-wrapper:nth-child(2) button {
+            background: rgb(149,202,241);
+            background: radial-gradient(circle, rgba(149,202,241,1) 36%, rgba(110,188,246,1) 100%);
+        }
+        .button-wrapper:nth-child(3) button {
+            background: rgb(193,157,240);
+            background: radial-gradient(circle, rgba(193,157,240,1) 36%, rgba(185,131,255,1) 100%);
+        }
+        .button-wrapper:nth-child(4) button {
+            background: rgb(167,242,241);
+            background: radial-gradient(circle, rgba(167,242,241,1) 36%, rgba(84,238,236,1) 100%);
+        }
+        .button-wrapper:nth-child(5) button {
+            background: rgb(242,172,185);
+            background: radial-gradient(circle, rgba(242,172,185,1) 36%, rgba(247,119,143,1) 100%);
+        }
+        .button-wrapper:nth-child(6) button {
+            background: rgb(250,128,128);
+            background: radial-gradient(circle, rgba(250,128,128,1) 36%, rgba(255,64,64,1) 100%);
+        }
+
+        button:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        button:active {
+            box-shadow: none;
+        }
+
+        .button-wrapper .label {
+            margin-top: 5px;
+        }
+        
+    </style>
+
+</head>
+
+<body>
+    <a href="https://github.com/rknightuk/outromaker" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#414141; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <main>
+        <div class="soundboard">
+            <div style="margin-bottom: 20px;"><a class="header" href="https://www.relay.fm/connected/" target="_blank">123 Outro Maker</a></div>
+            <div class="buttons">
+                <div class="button-wrapper">
+                    <button id="viticci"></button>
+                    <div class="label">VITICCI</div>
+                </div>
+                <div class="button-wrapper">
+                    <button id="stephen"></button>
+                    <div class="label">STEPHEN</div>
+                </div>
+                <div class="button-wrapper">
+                    <button id="myke"></button>
+                    <div class="label">MYKE</div>
+                </div>
+                <div class="button-wrapper">
+                    <button id="stephen-legacy"></button>
+                    <div class="label">LEGACY S</div>
+                </div>
+                <div class="button-wrapper">
+                    <button id="viticci-alt"></button>
+                    <div class="label">TKS</div>
+                </div>
+            </div>
+            <a class="footer" href="https://rknight.me" target="_blank">Made by Robb</a>
+        </div>
+    </main>
+
+    <script>
+        (function () {
+            const sounds = {
+                myke: new Audio('sounds/myke.mp3'),
+                'stephen-legacy': new Audio('sounds/stephen-legacy.mp3'),
+                stephen: new Audio('sounds/stephen.mp3'),
+                'viticci-alt': new Audio('sounds/viticci-alt.mp3'),
+                viticci: new Audio('sounds/viticci.mp3'),
+            }
+
+            const playSound = (soundName, once) => {
+                const element = document.getElementById(soundName)
+                sounds[soundName].play()
+            }
+
+            Array.from(document.getElementsByTagName('button')).forEach((b => {
+                b.addEventListener('click', (e) => {
+                    const soundName = e.target.id
+                    if (soundName === 'robb') {
+                        window.open('https://rknight.me')
+                        return
+                    }
+                    playSound(soundName)
+                })
+            }))
+            
+        })()
+    </script>
+</body>
+
+</html>
